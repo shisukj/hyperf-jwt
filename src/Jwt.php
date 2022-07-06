@@ -2,11 +2,11 @@
 declare(strict_types=1);
 namespace ShiSuKj\JwtAuth;
 
-use App\Service\LogService;
 use Hyperf\Config\Annotation\Value;
 use Hyperf\Di\Annotation\Inject;
 use ShiSuKj\JwtAuth\Exception\JWTException;
 use ShiSuKj\JwtAuth\Exception\TokenValidException;
+use ShiSuKj\JwtAuth\WhiteList;
 
 /**
  * PHP实现jwt
@@ -26,7 +26,7 @@ class Jwt
      * @Inject()
      * @var WhiteList
      */
-    protected $whiteList;
+    protected WhiteList $whiteList;
 
     /**
      * @Value("jwt.alg")
@@ -62,12 +62,6 @@ class Jwt
      * @var string
      */
     private $secret;
-
-    /**
-     * @Inject()
-     * @var LogService
-     */
-    protected LogService $logService;
 
     /**
      * 创建jtw token
