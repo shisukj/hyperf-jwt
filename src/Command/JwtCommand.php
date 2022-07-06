@@ -17,7 +17,7 @@ class JwtCommand extends HyperfCommand
     /**
      * 执行的命令行
      *
-     * @var ?string
+     * @var string
      */
     protected $name = 'jwt:publish';
 
